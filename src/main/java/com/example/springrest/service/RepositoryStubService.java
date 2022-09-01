@@ -21,7 +21,17 @@ public class RepositoryStubService {
                         .secondName("Smith")
                         .department("IT")
                         .position("Administrator")
+                        .role("ROLE1")
                         .build());
+        saveUser(counter.incrementAndGet(),
+                User.builder().id(counter.get())
+                        .firstName("Frank")
+                        .secondName("Walker")
+                        .department("IT")
+                        .position("Coder")
+                        .role("ROLE2")
+                        .build());
+
     }
 
     public List<User> findAll() {

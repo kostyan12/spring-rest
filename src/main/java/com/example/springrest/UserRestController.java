@@ -16,6 +16,9 @@ public class UserRestController {
     @Autowired
     private RepositoryStubService repositoryService;
 
+    @Autowired
+    private SecurityConfiguration securityConfiguration;
+
     // 2
     @GetMapping("/users")
     public List<User> listAllUsers() {
@@ -60,5 +63,8 @@ public class UserRestController {
         repositoryService.deleteById(id);
     }
 
-
+    @GetMapping("/status")
+    public String showStatus(){
+        return "Some status";
+    }
 }

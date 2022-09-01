@@ -12,4 +12,5 @@ public class User {
     private String secondName;
     private String position;
     private String department;
+    private String role;
 }
