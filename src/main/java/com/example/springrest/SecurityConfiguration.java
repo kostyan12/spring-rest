@@ -15,10 +15,10 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((httpz) ->
-                httpz.antMatchers( /* HttpMethod.GET,*/ "/users").hasAnyRole("ROLE1", "ROLE2")
-                     .antMatchers( HttpMethod.PUT,"/users").hasRole("ROLE2")
-                     .antMatchers( HttpMethod.POST,"/users").hasRole("ROLE2")
-                     .antMatchers( HttpMethod.DELETE,"/users").hasRole("ROLE2")
+                httpz.antMatchers( /* HttpMethod.GET,*/ "/users/**").hasAnyRole("ROLE1", "ROLE2")
+                     .antMatchers( HttpMethod.PUT,"/users/**").hasRole("ROLE2")
+                     .antMatchers( HttpMethod.POST,"/users/**").hasRole("ROLE2")
+                     .antMatchers( HttpMethod.DELETE,"/users/**").hasRole("ROLE2")
 
         ).httpBasic();
 
